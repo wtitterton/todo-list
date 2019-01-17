@@ -1,0 +1,251 @@
+/* Basic Style */
+body {
+  background: url(../groovepaper.png);
+  color: #333;
+  font-family: Lato, sans-serif;
+}
+.container {
+  display: block;
+  width: 500px;
+  margin: 100px auto 0;
+  overflow: hidden;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li * {
+  float: left;
+}
+li, h3 {
+  clear:both;
+  list-style:none;
+}
+input, button {
+  outline: none;
+}
+
+ h3, label[for='#new-task']
+ {
+   color:#013034;
+ }
+button {
+  box-shadow: 0px 0px 5px rgba(0,0,0,.4);
+  border:1px solid #42556F;
+  color: #000;
+  font-size: 15px;
+  float: right;
+  margin: 10px 10px;
+  padding:5px 20px;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+  position: relative;
+  background: #42556F;
+  color:#fff;
+}
+
+p > button
+{
+  background: linear-gradient(#2C3D55,#42556F );
+  color:#fff;
+  display: block;
+  width:300px;
+  padding:10px 0;
+  margin:20px auto 0 auto;
+  border:none;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  position: relative;
+  
+-webkit-transition: all 0.1s;
+ -moz-transition: all 0.1s;
+ transition: all 0.1s;
+ float: none;
+ -webkit-box-shadow: 0px 4px 0px #2C3D55, 0px 4px 8px rgba(0,0,0,.3);
+ -moz-box-shadow: 0px 4px 0px #2C3D55, 0px 4px 8px #000,0px 4px 8px rgba(0,0,0,.3);
+ box-shadow: 0px 4px 0px #2C3D55, 0px 4px 8px #000,0px 4px 8px rgba(0,0,0,.3);
+}
+
+p > button:active
+{
+   -webkit-box-shadow: 0px 2px 0px #2C3D55,0px 4px 8px rgba(0,0,0,.3);
+ -moz-box-shadow: 0px 2px 0px #2C3D55,0px 1px 2px rgba(0,0,0,.3);
+ box-shadow: 0px 2px 0px #2C3D55,0px 1px 2px rgba(0,0,0,.3);
+ position:relative;
+ top:4px;
+}
+
+p > button:hover
+{
+  background: linear-gradient(#42556F 90%,#2C3D55);
+}
+
+.checkbox
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Heading */
+h3,
+label[for='new-task'] {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 30px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+input[type="text"]:focus {
+  color: #333;
+}
+
+/* New Task */
+label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+input#new-task {
+  float: none;
+  margin:0 auto;
+  width: 475px;
+  border:2px solid #973252;
+  
+  
+}
+
+/* button border animation */
+
+
+li > button::before,li > button::after
+{
+  content: '';
+  box-sizing:border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+li > button::before,li > button::after
+{
+  border:1px solid transparent;
+  width:0;
+  height: 0;
+} 
+
+ li > button::before
+{
+  top:0px;
+  left:0px;
+}
+
+li > button::after
+{
+  bottom:0;
+  right:0px;
+}
+
+ li > button:hover::before, button:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+li > button:hover::before
+{
+   border-top-color: #fff;
+  border-right-color: #fff;
+  -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+li > button:hover::after
+{
+   border-bottom-color: #fff;
+  border-left-color: #fff;
+  -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+
+
+
+/* Task list */
+li {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+  visibility: hidden;
+  
+}
+.checkboxLabel
+{
+  background:none;
+  border:1px solid #ccc;
+  width:10px;
+  height:20px;
+  position: relative;
+  top:10px;
+  left:-3px;
+}
+
+input[type="checkbox"]:checked + .checkboxLabel:before
+{
+  content:'\f00c';
+  color:#973252;
+  position: absolute;
+  top:-10px;
+  left:1px;
+  font-family: fontAwesome;
+  
+}
+
+li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+li >  input[type="text"] {
+  width: 226px;
+}
+
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+ul li input[type=text] {
+  display:none;
+}
+
+ul li.editMode input[type=text] {
+  display:block;
+}
+
+ul li.editMode label {
+  display:none;
+}
+
+
+/* think about using animate.css to add better animations before fading out */
